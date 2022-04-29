@@ -1,8 +1,11 @@
 package sinteka;
 
-import java.util.ArrayList;
 import java.util.List;
 
+
+        /**
+         * Формат данных (2 Листа строк), для удобной обработки
+         * */
 public class Data {
 
     private List<String> firstList;
@@ -20,15 +23,7 @@ public class Data {
         return firstList;
     }
 
-    public void setFirstList(ArrayList<String> firstList) {
-        this.firstList = firstList;
-    }
-
     public List<String> getSecondList() {
         return secondList;
-    }
-
-    public void setSecondList(ArrayList<String> secondList) {
-        this.secondList = secondList;
     }
 }

@@ -1,23 +1,20 @@
 package sinteka;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class InputDataParser {
 
+        /**
+         * Обработчик входящих данных, формирует объект созданного нами класса Data, для удобной работы
+         * */
     AtomicInteger counter = new AtomicInteger(0);
 
-    public Data dataParse(String filePath) throws IOException {
+    public Data dataParse(String filePath)  {
 
         List<String> listFirst = new ArrayList<>();
         List<String> listSecond = new ArrayList<>();
@@ -31,13 +28,11 @@ public class InputDataParser {
                             counter.incrementAndGet();
                         } else listSecond.add(s.toLowerCase());
                     });
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             System.out.println("is it really there?");
             e.printStackTrace();
         }
-
         return new Data(listFirst.subList(1, listFirst.size()),listSecond.subList(1, listSecond.size()));
     }
-
 
 }
